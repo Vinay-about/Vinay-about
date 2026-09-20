@@ -1636,12 +1636,14 @@ const SCRIPT_URL =
 const revealItems =
 document.querySelectorAll(".reveal");
 
+if (window.IntersectionObserver) {
+
 const revealObserver =
 new IntersectionObserver((entries) => {
 
 entries.forEach((entry) => {
 
-if(entry.isIntersecting){
+if (entry.isIntersecting) {
 
 entry.target.classList.add("visible");
 
@@ -1651,15 +1653,24 @@ revealObserver.unobserve(entry.target);
 
 });
 
-},{
-threshold:0.08
+}, {
+threshold: 0.08
 });
-
 
 revealItems.forEach((item) => {
 revealObserver.observe(item);
 });
 
+} else {
+
+revealItems.forEach((item) => {
+item.classList.add("visible");
+});
+
+}
+
+
+/* CONTACT FORM */
 
 const contactForm =
 document.getElementById("contactForm");
@@ -1668,9 +1679,12 @@ const formStatus =
 document.getElementById("formStatus");
 
 
-contactForm.addEventListener("submit", async (event) => {
+if (contactForm) {
+
+contactForm.addEventListener("submit", function(event) {
 
 event.preventDefault();
+
 
 const name =
 document.getElementById("name").value.trim();
@@ -1682,7 +1696,7 @@ const message =
 document.getElementById("message").value.trim();
 
 
-if(!name || !gmail || !message){
+if (!name || !gmail || !message) {
 
 formStatus.textContent =
 "Please fill all fields.";
@@ -1696,23 +1710,28 @@ const button =
 contactForm.querySelector(".send");
 
 button.disabled = true;
-button.textContent = "SENDING...";
-formStatus.textContent = "";
+
+button.textContent =
+"SENDING...";
+
+formStatus.textContent =
+"Sending message...";
 
 
 const data = {
 
 name: name,
+
 gmail: gmail,
+
 message: message,
+
 time: new Date().toLocaleString("en-IN")
 
 };
 
 
-try {
-
-await fetch(SCRIPT_URL, {
+fetch(SCRIPT_URL, {
 
 method: "POST",
 
@@ -1724,29 +1743,35 @@ headers: {
 
 body: JSON.stringify(data)
 
-});
-
+})
+.then(function() {
 
 formStatus.textContent =
 "Message sent successfully ✓";
 
 contactForm.reset();
 
-
-} catch(error) {
+})
+.catch(function(error) {
 
 console.error(error);
 
 formStatus.textContent =
-"Failed to send message.";
+"Message could not be sent.";
 
-}
-
+})
+.finally(function() {
 
 button.disabled = false;
-button.textContent = "SEND MESSAGE →";
+
+button.textContent =
+"SEND MESSAGE →";
 
 });
+
+});
+
+}
 
 </script>
 </body>
