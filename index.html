@@ -1627,6 +1627,67 @@ formStatus.textContent =
 "Contact system is not connected yet.";
 
 return;
+<script>
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbyi-GOOOssUbINiKbH49NDBWCX3K26JNOy708UXaG7R0CtPQFmrZHUa2PI6KjqRhYXoGA/exec";
+
+
+const revealItems =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver((entries) => {
+
+entries.forEach((entry) => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+revealObserver.unobserve(entry.target);
+
+}
+
+});
+
+},{
+threshold:0.08
+});
+
+
+revealItems.forEach((item) => {
+revealObserver.observe(item);
+});
+
+
+const contactForm =
+document.getElementById("contactForm");
+
+const formStatus =
+document.getElementById("formStatus");
+
+
+contactForm.addEventListener("submit", async (event) => {
+
+event.preventDefault();
+
+const name =
+document.getElementById("name").value.trim();
+
+const gmail =
+document.getElementById("gmail").value.trim();
+
+const message =
+document.getElementById("message").value.trim();
+
+
+if(!name || !gmail || !message){
+
+formStatus.textContent =
+"Please fill all fields.";
+
+return;
 
 }
 
@@ -1634,79 +1695,59 @@ return;
 const button =
 contactForm.querySelector(".send");
 
-
 button.disabled = true;
-
 button.textContent = "SENDING...";
-
 formStatus.textContent = "";
 
 
 const data = {
 
-name:name,
-
-gmail:gmail,
-
-message:message,
-
-time:new Date().toLocaleString("en-IN")
+name: name,
+gmail: gmail,
+message: message,
+time: new Date().toLocaleString("en-IN")
 
 };
 
 
-try{
+try {
 
-await fetch(
+await fetch(SCRIPT_URL, {
 
-SCRIPT_URL,
+method: "POST",
 
-{
+mode: "no-cors",
 
-method:"POST",
-
-mode:"no-cors",
-
-headers:{
-"Content-Type":
-"text/plain;charset=utf-8"
+headers: {
+"Content-Type": "text/plain;charset=utf-8"
 },
 
-body:JSON.stringify(data)
+body: JSON.stringify(data)
 
-}
-
-);
+});
 
 
 formStatus.textContent =
 "Message sent successfully ✓";
 
-
 contactForm.reset();
 
 
-}catch(error){
+} catch(error) {
 
 console.error(error);
 
 formStatus.textContent =
-"Something went wrong. Please contact on Telegram.";
+"Failed to send message.";
 
-}finally{
+}
+
 
 button.disabled = false;
+button.textContent = "SEND MESSAGE →";
 
-button.textContent =
-"SEND MESSAGE →";
-
-}
-
-}
-
-);
+});
 
 </script>
-
 </body>
   </html>
