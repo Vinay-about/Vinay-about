@@ -1,1589 +1,2220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VINAY PRIME — Developer</title>
 
-<meta name="description" content="VINAY PRIME — Developer building websites, Telegram bots, web apps and custom digital projects.">
+<meta name="description"
+content="VINAY PRIME — Developer creating websites, Telegram bots, web apps and digital projects.">
+
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://vinay-about.github.io/Vinay-about/">
 
-<link rel="icon" type="image/png" href="file_000000001a8881fa9b189b35d00ddd28.png">
+<link rel="canonical"
+href="https://vinay-about.github.io/Vinay-about/">
 
-<meta name="theme-color" content="#fdfdfc">
+<link rel="icon"
+type="image/png"
+href="file_000000001a8881fa9b189b35d00ddd28.png">
 
-<meta property="og:title" content="VINAY PRIME — Developer">
-<meta property="og:description" content="Developer building websites, Telegram bots, web apps and custom digital projects.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://vinay-about.github.io/Vinay-about/">
-<meta property="og:image" content="file_000000001a8881fa9b189b35d00ddd28.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* =========================
+   RESET
+========================= */
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:#fdfdfc;
-  color:#101010;
-  font-family:"DM Sans",sans-serif;
-  overflow-x:hidden;
+    font-family:"DM Sans",sans-serif;
+    background:#ffffff;
+    color:#111111;
+    line-height:1.6;
+    overflow-x:hidden;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+    text-decoration:none;
+    color:inherit;
 }
 
-button,input,textarea{
-  font-family:inherit;
+button,
+input,
+textarea{
+    font-family:inherit;
 }
 
-.page{
-  width:min(1180px,92%);
-  margin:auto;
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
 }
 
-.muted{
-  color:#8c8c8c;
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid #eeeeee;
 }
 
-.line{
-  height:1px;
-  background:#e7e7e5;
-  width:100%;
+.nav-inner{
+    height:76px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:all .8s cubic-bezier(.2,.7,.2,1);
+.logo{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:22px;
+    font-weight:700;
+
+    letter-spacing:-1px;
 }
 
-.reveal.visible{
-  opacity:1;
-  transform:translateY(0);
+.logo span{
+    color:#999999;
 }
 
-/* TOP */
-
-.top{
-  padding:25px 0 0;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
 }
 
-.top-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.nav-links a{
+    color:#777777;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.25s;
 }
 
-.top-left{
-  font-size:13px;
-  font-weight:600;
+.nav-links a:hover{
+    color:#111111;
 }
 
-.top-right{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:12px;
-  color:#777;
+.nav-contact{
+    padding:10px 18px;
+
+    border:1px solid #111111;
+
+    border-radius:999px;
+
+    color:#111111!important;
 }
 
-.status-dot{
-  width:7px;
-  height:7px;
-  background:#20b26b;
-  border-radius:50%;
-  box-shadow:0 0 0 4px rgba(32,178,107,.1);
+.nav-contact:hover{
+    background:#111111;
+
+    color:#ffffff!important;
 }
 
-/* HERO */
+.menu-btn{
+    display:none;
+
+    border:0;
+    background:none;
+
+    color:#111111;
+
+    font-size:26px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  min-height:92vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:80px 0 70px;
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:130px 0 90px;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
-.avatar-wrap{
-  position:relative;
-  margin-bottom:28px;
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:#f3f3f3;
+
+    filter:blur(80px);
+
+    right:-180px;
+    top:80px;
+
+    z-index:-1;
 }
 
-.avatar{
-  width:142px;
-  height:142px;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
-  border:4px solid #fff;
-  box-shadow:
-    0 0 0 1px #dededc,
-    0 20px 50px rgba(0,0,0,.10);
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:80px;
 }
 
-.avatar-ring{
-  position:absolute;
-  inset:-8px;
-  border:1px solid #e5e5e3;
-  border-radius:50%;
-  animation:rotate 15s linear infinite;
+
+/* HERO CONTENT */
+
+.hero-small{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    color:#777777;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
 }
 
-@keyframes rotate{
-  from{transform:rotate(0)}
-  to{transform:rotate(360deg)}
+.hero-dot{
+    width:8px;
+    height:8px;
+
+    background:#111111;
+
+    border-radius:50%;
 }
 
-.hero-name{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(60px,12vw,145px);
-  font-weight:600;
-  letter-spacing:-8px;
-  line-height:.83;
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:clamp(60px,8vw,105px);
+
+    line-height:.88;
+
+    letter-spacing:-6px;
+
+    margin-bottom:30px;
 }
 
-.hero-name span{
-  color:#999;
-}
-
-.hero-role{
-  margin-top:30px;
-  font-size:clamp(20px,3vw,29px);
-  font-weight:600;
-  letter-spacing:-.8px;
-  max-width:720px;
+.hero h1 span{
+    color:#aaaaaa;
 }
 
 .hero-description{
-  max-width:570px;
-  margin:17px auto 0;
-  color:#858585;
-  font-size:14px;
-  line-height:1.8;
+    max-width:570px;
+
+    color:#666666;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    margin-bottom:34px;
 }
 
-.social-row{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:25px;
+
+/* BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.btn{
+    min-height:50px;
+
+    padding:0 24px;
+
+    border-radius:999px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-dark{
+    background:#111111;
+
+    color:#ffffff;
+}
+
+.btn-dark:hover{
+    background:#333333;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.btn-light{
+    border:1px solid #dddddd;
+
+    color:#111111;
+
+    background:#ffffff;
+}
+
+.btn-light:hover{
+    border-color:#111111;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.hero-visual{
+    display:flex;
+
+    justify-content:center;
+}
+
+.profile-box{
+    position:relative;
+
+    width:min(380px,75vw);
+
+    aspect-ratio:1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.profile-box::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-18px;
+
+    border:1px solid #dddddd;
+
+    border-radius:50%;
+
+    animation:rotateRing 18s linear infinite;
+}
+
+.profile-box::after{
+    content:"";
+
+    position:absolute;
+
+    inset:-43px;
+
+    border:1px dashed #eeeeee;
+
+    border-radius:50%;
+
+    animation:rotateReverse 28s linear infinite;
+}
+
+@keyframes rotateRing{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes rotateReverse{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
+
+.profile-image{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:7px solid #ffffff;
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.12);
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.socials{
+    display:flex;
+
+    gap:10px;
+
+    margin-top:28px;
 }
 
 .social{
-  width:43px;
-  height:43px;
-  border:1px solid #e2e2e0;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:17px;
-  transition:.25s;
-  background:#fff;
+    width:42px;
+    height:42px;
+
+    border:1px solid #dddddd;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#555555;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.3s;
 }
 
 .social:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
+    background:#111111;
+
+    border-color:#111111;
+
+    color:#ffffff;
+
+    transform:translateY(-4px);
 }
 
-.social.tg:hover{
-  background:#229ed9;
-  color:#fff;
-  border-color:#229ed9;
-}
 
-.social.yt:hover{
-  background:#ff0000;
-  color:#fff;
-  border-color:#ff0000;
-}
-
-/* SECTION */
-
-.section{
-  padding:120px 0;
-}
-
-.section-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:42px;
-}
-
-.section-number{
-  font-size:11px;
-  color:#aaa;
-  letter-spacing:2px;
-  font-weight:700;
-}
-
-.section-heading{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(43px,7vw,78px);
-  font-weight:500;
-  letter-spacing:-4px;
-  line-height:.95;
-}
-
-/* BIOGRAPHY */
-
-.bio{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  padding:55px 0;
-}
-
-.bio-main{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(25px,4vw,42px);
-  line-height:1.15;
-  letter-spacing:-1.8px;
-}
-
-.bio-main strong{
-  font-weight:600;
-}
-
-.bio-side{
-  color:#777;
-  font-size:15px;
-  line-height:1.9;
-  max-width:470px;
-}
-
-.bio-side p+p{
-  margin-top:20px;
-}
-
-/* MARQUEE */
+/* =========================
+   MARQUEE
+========================= */
 
 .marquee{
-  border-top:1px solid #e6e6e4;
-  border-bottom:1px solid #e6e6e4;
-  overflow:hidden;
-  white-space:nowrap;
-  padding:17px 0;
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    border-top:1px solid #eeeeee;
+    border-bottom:1px solid #eeeeee;
+
+    padding:18px 0;
 }
 
 .marquee-track{
-  display:inline-flex;
-  animation:marquee 25s linear infinite;
+    display:inline-block;
+
+    animation:marquee 25s linear infinite;
 }
 
 .marquee span{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:2px;
-  color:#999;
-  margin:0 25px;
+    display:inline-block;
+
+    margin-right:45px;
+
+    color:#999999;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:2px;
 }
 
 @keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
 }
 
-/* SKILLS */
 
-.skills{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:120px 0;
+}
+
+.section-number{
+    color:#999999;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:clamp(42px,6vw,72px);
+
+    line-height:.95;
+
+    letter-spacing:-4px;
+
+    margin-bottom:30px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:.8fr 1.2fr;
+
+    gap:90px;
+}
+
+.about-content{
+    color:#666666;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+.about-content p{
+    margin-bottom:20px;
+}
+
+.about-content strong{
+    color:#111111;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:40px;
+}
+
+.stat{
+    padding:24px;
+
+    border:1px solid #eeeeee;
+
+    border-radius:18px;
+
+    background:#fafafa;
+
+    transition:.3s;
+}
+
+.stat:hover{
+    border-color:#cccccc;
+
+    transform:translateY(-4px);
+}
+
+.stat-number{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:31px;
+
+    font-weight:700;
+}
+
+.stat-label{
+    color:#888888;
+
+    font-size:12px;
+
+    margin-top:4px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
 }
 
 .skill{
-  min-height:155px;
-  padding:22px;
-  border:1px solid #e4e4e2;
-  background:#fff;
-  border-radius:18px;
-  position:relative;
-  overflow:hidden;
-  transition:.3s;
+    min-height:170px;
+
+    padding:24px;
+
+    border:1px solid #eeeeee;
+
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    background:#ffffff;
+
+    transition:.3s;
 }
 
 .skill:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 45px rgba(0,0,0,.07);
+    border-color:#111111;
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.06);
 }
 
-.skill-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.skill-number{
+    color:#bbbbbb;
+
+    font-size:11px;
+
+    font-weight:700;
 }
 
-.skill-icon{
-  width:37px;
-  height:37px;
-  border-radius:11px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:13px;
-  font-weight:700;
+.skill-name{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:21px;
+
+    font-weight:600;
 }
 
-.skill-percent{
-  font-size:11px;
-  color:#999;
+.skill-description{
+    color:#888888;
+
+    font-size:12px;
 }
 
-.skill h3{
-  margin-top:25px;
-  font-family:"Space Grotesk",sans-serif;
-  font-size:18px;
-  font-weight:600;
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
-.skill small{
-  color:#999;
-  font-size:11px;
+.reveal.show{
+    opacity:1;
+
+    transform:translateY(0);
 }
 
-.skill-bar{
-  position:absolute;
-  bottom:0;
-  left:0;
-  height:3px;
-  width:100%;
-}
 
-.html .skill-icon{
-  background:#fff0e8;
-  color:#e34c26;
-}
-
-.html .skill-bar{
-  background:#e34c26;
-}
-
-.css .skill-icon{
-  background:#eaf4ff;
-  color:#1572b6;
-}
-
-.css .skill-bar{
-  background:#1572b6;
-}
-
-.js .skill-icon{
-  background:#fff8d6;
-  color:#aa8c00;
-}
-
-.js .skill-bar{
-  background:#f0c900;
-}
-
-.python .skill-icon{
-  background:#edf8ff;
-  color:#3776ab;
-}
-
-.python .skill-bar{
-  background:#3776ab;
-}
-
-.telegram .skill-icon{
-  background:#e5f7ff;
-  color:#229ed9;
-}
-
-.telegram .skill-bar{
-  background:#229ed9;
-}
-
-.flask .skill-icon{
-  background:#ffecec;
-  color:#e53935;
-}
-
-.flask .skill-bar{
-  background:#e53935;
-}
-
-.java .skill-icon{
-  background:#fff0e6;
-  color:#e76f00;
-}
-
-.java .skill-bar{
-  background:#e76f00;
-}
-
-.github .skill-icon{
-  background:#eee;
-  color:#111;
-}
-
-.github .skill-bar{
-  background:#111;
-}
-
-/* PROJECTS */
-
-.project-list{
-  border-top:1px solid #dededc;
-}
-
-.project{
-  display:grid;
-  grid-template-columns:80px 1fr 50px;
-  gap:25px;
-  align-items:center;
-  padding:32px 0;
-  border-bottom:1px solid #dededc;
-  transition:.25s;
-}
-
-.project:hover{
-  padding-left:12px;
-  padding-right:12px;
-  background:#fafaf9;
-}
-
-.project-num{
-  font-size:11px;
-  color:#aaa;
-  letter-spacing:2px;
-}
-
-.project h3{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:29px;
-  font-weight:500;
-  letter-spacing:-1.2px;
-}
-
-.project p{
-  margin-top:6px;
-  color:#8a8a8a;
-  font-size:13px;
-  line-height:1.7;
-  max-width:680px;
-}
-
-.project-tags{
-  margin-top:12px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-}
-
-.tag{
-  padding:5px 9px;
-  border-radius:20px;
-  background:#f1f1ef;
-  color:#777;
-  font-size:10px;
-}
-
-.project-arrow{
-  width:44px;
-  height:44px;
-  border:1px solid #ddd;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:.25s;
-}
-
-.project:hover .project-arrow{
-  background:#111;
-  color:#fff;
-  border-color:#111;
-  transform:rotate(45deg);
-}
-
-/* CTA */
-
-.big-cta{
-  background:#111;
-  color:#fff;
-  padding:85px 55px;
-  border-radius:28px;
-  position:relative;
-  overflow:hidden;
-}
-
-.big-cta:before{
-  content:"";
-  position:absolute;
-  width:350px;
-  height:350px;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.08);
-  right:-100px;
-  top:-160px;
-}
-
-.big-cta:after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  background:rgba(0,170,255,.08);
-  left:-100px;
-  bottom:-120px;
-}
-
-.cta-content{
-  position:relative;
-  z-index:2;
-}
-
-.cta-small{
-  color:#888;
-  font-size:11px;
-  letter-spacing:3px;
-  font-weight:700;
-}
-
-.big-cta h2{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:clamp(45px,7vw,82px);
-  line-height:.95;
-  letter-spacing:-4px;
-  font-weight:500;
-  margin-top:15px;
-}
-
-.big-cta p{
-  max-width:600px;
-  color:#aaa;
-  font-size:14px;
-  line-height:1.8;
-  margin-top:20px;
-}
-
-.cta-button{
-  display:inline-flex;
-  margin-top:27px;
-  padding:13px 19px;
-  background:#fff;
-  color:#111;
-  border-radius:12px;
-  font-size:12px;
-  font-weight:700;
-  transition:.25s;
-}
-
-.cta-button:hover{
-  transform:translateY(-4px);
-}
-
-/* CONTACT */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:80px;
-}
-
-.contact-copy h3{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:39px;
-  letter-spacing:-2px;
-  font-weight:500;
-  line-height:1.05;
-}
-
-.contact-copy p{
-  margin-top:17px;
-  color:#888;
-  font-size:14px;
-  line-height:1.8;
-}
-
-.contact-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:25px;
-  font-size:13px;
-  font-weight:700;
-  border-bottom:1px solid #111;
-  padding-bottom:5px;
-}
-
-.form{
-  border:1px solid #e1e1df;
-  border-radius:22px;
-  padding:27px;
-  background:#fff;
-}
-
-.field{
-  margin-bottom:17px;
-}
-
-.field label{
-  display:block;
-  color:#777;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:1.5px;
-  margin-bottom:7px;
-}
-
-.field input,
-.field textarea{
-  width:100%;
-  border:0;
-  border-bottom:1px solid #ddd;
-  padding:12px 0;
-  background:transparent;
-  outline:none;
-  font-size:14px;
-  color:#111;
-}
-
-.field input:focus,
-.field textarea:focus{
-  border-color:#111;
-}
-
-.field textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-.send{
-  border:0;
-  background:#111;
-  color:#fff;
-  border-radius:12px;
-  padding:14px 20px;
-  font-size:12px;
-  font-weight:700;
-  cursor:pointer;
-  width:100%;
-}
-
-.send:disabled{
-  opacity:.5;
-}
-
-.form-status{
-  text-align:center;
-  margin-top:12px;
-  font-size:11px;
-  min-height:16px;
-}
-
-/* FOOTER */
-
-.footer{
-  padding:70px 0 130px;
-}
-
-.footer-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.footer-name{
-  font-family:"Space Grotesk",sans-serif;
-  font-size:24px;
-  font-weight:600;
-  letter-spacing:-1px;
-}
-
-.footer p{
-  color:#999;
-  font-size:11px;
-}
-
-/* FLOATING TELEGRAM */
-
-.floating-tg{
-  position:fixed;
-  right:24px;
-  bottom:25px;
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#229ed9;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:22px;
-  box-shadow:0 12px 35px rgba(34,158,217,.3);
-  z-index:500;
-  transition:.25s;
-}
-
-.floating-tg:hover{
-  transform:scale(1.08);
-}
-
-/* MOBILE NAV */
-
-.mobile-nav{
-  display:none;
-}
-
-/* RESPONSIVE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
 
-  .skills{
-    grid-template-columns:repeat(2,1fr);
-  }
+    .nav-links{
+        display:none;
 
-  .bio,
-  .contact-grid{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
+        position:absolute;
 
-  .contact-grid{
-    gap:50px;
-  }
+        top:76px;
+        left:0;
+
+        width:100%;
+
+        padding:22px 4%;
+
+        background:#ffffff;
+
+        border-bottom:1px solid #eeeeee;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        gap:20px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        padding-top:125px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:70px;
+    }
+
+    .hero-visual{
+        order:-1;
+    }
+
+    .hero-small,
+    .hero-buttons,
+    .socials{
+        justify-content:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .profile-box{
+        width:min(300px,72vw);
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+
+        gap:35px;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
-@media(max-width:600px){
 
-  .page{
-    width:89%;
-  }
+@media(max-width:520px){
 
-  .top{
-    padding-top:18px;
-  }
+    .nav-inner{
+        height:68px;
+    }
 
-  .hero{
-    min-height:88vh;
-    padding-top:70px;
-  }
+    .nav-links{
+        top:68px;
+    }
 
-  .avatar{
-    width:115px;
-    height:115px;
-  }
+    .hero h1{
+        font-size:58px;
 
-  .hero-name{
-    font-size:19vw;
-    letter-spacing:-5px;
-  }
+        letter-spacing:-4px;
+    }
 
-  .hero-role{
-    font-size:21px;
-    margin-top:24px;
-  }
+    .hero-description{
+        font-size:16px;
+    }
 
-  .hero-description{
-    font-size:13px;
-  }
+    section{
+        padding:85px 0;
+    }
 
-  .section{
-    padding:85px 0;
-  }
+    .stats{
+        grid-template-columns:1fr;
+    }
 
-  .section-top{
-    display:block;
-  }
-
-  .section-number{
-    margin-bottom:13px;
-  }
-
-  .section-heading{
-    font-size:48px;
-  }
-
-  .bio{
-    padding:35px 0;
-  }
-
-  .bio-main{
-    font-size:29px;
-  }
-
-  .skills{
-    grid-template-columns:1fr 1fr;
-    gap:9px;
-  }
-
-  .skill{
-    min-height:140px;
-    padding:17px;
-  }
-
-  .skill h3{
-    font-size:15px;
-  }
-
-  .skill small{
-    font-size:9px;
-  }
-
-  .project{
-    grid-template-columns:42px 1fr 38px;
-    gap:10px;
-    padding:25px 0;
-  }
-
-  .project h3{
-    font-size:22px;
-  }
-
-  .project p{
-    font-size:12px;
-  }
-
-  .project-arrow{
-    width:36px;
-    height:36px;
-  }
-
-  .big-cta{
-    padding:55px 27px;
-    border-radius:24px;
-  }
-
-  .big-cta h2{
-    font-size:48px;
-  }
-
-  .contact-copy h3{
-    font-size:35px;
-  }
-
-  .form{
-    padding:22px;
-  }
-
-  .floating-tg{
-    right:17px;
-    bottom:82px;
-  }
-
-  .footer{
-    padding-bottom:120px;
-  }
-
-  .footer-row{
-    display:block;
-  }
-
-  .footer p{
-    margin-top:10px;
-  }
-
-  .mobile-nav{
-    position:fixed;
-    left:12px;
-    right:12px;
-    bottom:10px;
-    height:62px;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(18px);
-    border:1px solid #dededc;
-    border-radius:20px;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    z-index:1000;
-    box-shadow:0 12px 35px rgba(0,0,0,.12);
-  }
-
-  .mobile-nav a{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:3px;
-    color:#888;
-    font-size:9px;
-    font-weight:700;
-  }
-
-  .mobile-nav a span{
-    font-size:17px;
-  }
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<div class="page">
 
-<div class="top">
+<!-- =========================
+     NAVBAR
+========================= -->
 
-<div class="top-row">
+<header class="navbar">
 
-<div class="top-left">
-VINAY PRIME®
-</div>
+    <div class="container nav-inner">
 
-<div class="top-right">
-<span class="status-dot"></span>
-Available for projects
-</div>
-
-</div>
-
-</div>
+        <a href="#home" class="logo">
+            VINAY <span>PRIME</span>
+        </a>
 
 
-<section class="hero" id="home">
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Menu">
 
-<div class="avatar-wrap">
+            ☰
 
-<div class="avatar-ring"></div>
+        </button>
 
-<img
-class="avatar"
-src="file_000000001a8881fa9b189b35d00ddd28.png"
-alt="VINAY PRIME Developer"
->
 
-</div>
+        <nav
+            class="nav-links"
+            id="navLinks">
 
-<div class="hero-name">
-VINAY <span>PRIME</span>
-</div>
+            <a href="#home">
+                Home
+            </a>
 
-<div class="hero-role">
-Building digital experiences with creativity, code, and curiosity.
-</div>
+            <a href="#about">
+                About
+            </a>
 
-<p class="hero-description">
-Developer focused on websites, Telegram bots, web apps and custom digital experiences.
-</p>
+            <a href="#skills">
+                Skills
+            </a>
 
-<div class="social-row">
+            <a href="#projects">
+                Projects
+            </a>
 
-<a
-class="social tg"
-href="https://t.me/VINAYXHERE"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Telegram"
->✈</a>
+            <a
+                href="#contact"
+                class="nav-contact">
 
-<a
-class="social yt"
-href="https://youtube.com/"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="YouTube"
->▶</a>
+                Contact
 
-</div>
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main>
+
+<section
+    class="hero"
+    id="home">
+
+    <div class="container hero-grid">
+
+
+        <div class="hero-content reveal">
+
+            <div class="hero-small">
+
+                <span class="hero-dot"></span>
+
+                DEVELOPER • CREATOR • BUILDER
+
+            </div>
+
+
+            <h1>
+
+                VINAY<br>
+
+                <span>PRIME</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                I build modern websites, Telegram bots,
+                web apps and digital projects with clean
+                design and practical functionality.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="btn btn-dark">
+
+                    View Projects
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn btn-light">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+
+            <div class="socials">
+
+                <a
+                    href="https://t.me/VINAYXHERE"
+                    target="_blank"
+                    rel="noopener"
+                    class="social">
+
+                    TG
+
+                </a>
+
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="social">
+
+                    YT
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-visual reveal">
+
+            <div class="profile-box">
+
+                <img
+                    src="file_000000001a8881fa9b189b35d00ddd28.png"
+                    alt="VINAY PRIME"
+                    class="profile-image">
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
+
+
+<!-- =========================
+     MARQUEE
+========================= -->
 
 <div class="marquee">
 
-<div class="marquee-track">
+    <div class="marquee-track">
 
-<span>WEB DEVELOPMENT</span>
-<span>TELEGRAM BOTS</span>
-<span>WEB APPS</span>
-<span>DIGITAL PROJECTS</span>
+        <span>WEB DEVELOPMENT</span>
+        <span>TELEGRAM BOTS</span>
+        <span>PYTHON</span>
+        <span>FLASK</span>
+        <span>JAVASCRIPT</span>
+        <span>ANDROID</span>
 
-<span>WEB DEVELOPMENT</span>
-<span>TELEGRAM BOTS</span>
-<span>WEB APPS</span>
-<span>DIGITAL PROJECTS</span>
+        <span>WEB DEVELOPMENT</span>
+        <span>TELEGRAM BOTS</span>
+        <span>PYTHON</span>
+        <span>FLASK</span>
+        <span>JAVASCRIPT</span>
+        <span>ANDROID</span>
 
-</div>
-
-</div>
-
-
-<section class="section reveal" id="about">
-
-<div class="section-top">
-
-<div class="section-number">
-01 / BIOGRAPHY
-</div>
-
-  <h2 class="section-heading">
-ABOUT ME
-</h2>
+    </div>
 
 </div>
 
-<div class="line"></div>
 
-<div class="bio">
 
-<div class="bio-main">
-I'm <strong>Vinay Prime</strong> — a developer turning ideas into digital experiences.
-</div>
+<!-- =========================
+     ABOUT
+========================= -->
 
-<div class="bio-side">
+<section id="about">
 
-<p>
-I enjoy building clean websites, Telegram bots,
-web applications and creative digital projects.
-</p>
+    <div class="container">
 
-<p>
-I believe good digital work should be simple,
-useful and memorable.
-</p>
+        <div class="about-grid">
 
-</div>
 
-</div>
+            <div class="reveal">
+
+                <div class="section-number">
+                    01 — ABOUT
+                </div>
+
+                <h2 class="section-title">
+
+                    Building<br>
+                    digital ideas.
+
+                </h2>
+
+            </div>
+
+
+            <div class="about-content reveal">
+
+                <p>
+
+                    I'm <strong>VINAY PRIME</strong>,
+                    a developer who enjoys creating
+                    websites, bots and digital projects.
+
+                </p>
+
+
+                <p>
+
+                    I work with modern web technologies
+                    and Python-based tools to turn ideas
+                    into useful working projects.
+
+                </p>
+
+
+                <p>
+
+                    My focus is simple:
+                    clean design, useful features
+                    and a smooth experience.
+
+                </p>
+
+
+                <div class="stats">
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            08+
+                        </div>
+
+                        <div class="stat-label">
+                            Technologies
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            10+
+                        </div>
+
+                        <div class="stat-label">
+                            Projects
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <div class="stat-number">
+                            24/7
+                        </div>
+
+                        <div class="stat-label">
+                            Learning
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<section class="section reveal" id="skills">
 
-<div class="section-top">
+<!-- =========================
+     SKILLS
+========================= -->
 
-<div class="section-number">
-02 / SKILLS
-</div>
+<section id="skills">
 
-<h2 class="section-heading">
-MY STACK
-</h2>
-
-</div>
-
-<div class="line"></div>
-
-<div style="height:40px"></div>
-
-<div class="skills">
-
-<div class="skill html">
-
-<div class="skill-top">
-<div class="skill-icon">HTML</div>
-<div class="skill-percent">95%</div>
-</div>
-
-<h3>HTML</h3>
-<small>Structure & Web</small>
-
-<div class="skill-bar"></div>
-
-</div>
+    <div class="container">
 
 
-<div class="skill css">
-
-<div class="skill-top">
-<div class="skill-icon">CSS</div>
-<div class="skill-percent">90%</div>
-</div>
-
-<h3>CSS</h3>
-<small>Design & UI</small>
-
-<div class="skill-bar"></div>
-
-</div>
+        <div class="section-number reveal">
+            02 — SKILLS
+        </div>
 
 
-<div class="skill js">
+        <h2 class="section-title reveal">
 
-<div class="skill-top">
-<div class="skill-icon">JS</div>
-<div class="skill-percent">82%</div>
-</div>
+            What I work with.
 
-<h3>JavaScript</h3>
-<small>Interactions</small>
-
-<div class="skill-bar"></div>
-
-</div>
+        </h2>
 
 
-<div class="skill python">
-
-<div class="skill-top">
-<div class="skill-icon">PY</div>
-<div class="skill-percent">88%</div>
-</div>
-
-<h3>Python</h3>
-<small>Programming</small>
-
-<div class="skill-bar"></div>
-
-</div>
+        <div class="skills-grid">
 
 
-<div class="skill telegram">
+            <div class="skill reveal">
 
-<div class="skill-top">
-<div class="skill-icon">TG</div>
-<div class="skill-percent">92%</div>
-</div>
+                <div class="skill-number">
+                    01
+                </div>
 
-<h3>Telegram Bots</h3>
-<small>Automation</small>
+                <div class="skill-name">
+                    HTML
+                </div>
 
-<div class="skill-bar"></div>
+                <div class="skill-description">
+                    Modern website structure
+                </div>
 
-</div>
+            </div>
 
+                      <div class="skill reveal">
 
-<div class="skill flask">
+                <div class="skill-number">
+                    02
+                </div>
 
-<div class="skill-top">
-<div class="skill-icon">FL</div>
-<div class="skill-percent">85%</div>
-</div>
+                <div class="skill-name">
+                    CSS
+                </div>
 
-<h3>Flask</h3>
-<small>Web Apps</small>
+                <div class="skill-description">
+                    Responsive UI design
+                </div>
 
-<div class="skill-bar"></div>
-
-</div>
-
-
-<div class="skill java">
-
-<div class="skill-top">
-<div class="skill-icon">JV</div>
-<div class="skill-percent">78%</div>
-</div>
-
-<h3>Java</h3>
-<small>Android & Apps</small>
-
-<div class="skill-bar"></div>
-
-</div>
+            </div>
 
 
-<div class="skill github">
+            <div class="skill reveal">
 
-<div class="skill-top">
-<div class="skill-icon">GH</div>
-<div class="skill-percent">86%</div>
-</div>
+                <div class="skill-number">
+                    03
+                </div>
 
-<h3>GitHub</h3>
-<small>Projects & Deploy</small>
+                <div class="skill-name">
+                    JavaScript
+                </div>
 
-<div class="skill-bar"></div>
+                <div class="skill-description">
+                    Interactive web features
+                </div>
 
-</div>
+            </div>
 
-</div>
+
+            <div class="skill reveal">
+
+                <div class="skill-number">
+                    04
+                </div>
+
+                <div class="skill-name">
+                    Python
+                </div>
+
+                <div class="skill-description">
+                    Automation & applications
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-number">
+                    05
+                </div>
+
+                <div class="skill-name">
+                    Telegram Bots
+                </div>
+
+                <div class="skill-description">
+                    Bot automation systems
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-number">
+                    06
+                </div>
+
+                <div class="skill-name">
+                    Flask
+                </div>
+
+                <div class="skill-description">
+                    Python web applications
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-number">
+                    07
+                </div>
+
+                <div class="skill-name">
+                    Java
+                </div>
+
+                <div class="skill-description">
+                    Android development
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-number">
+                    08
+                </div>
+
+                <div class="skill-name">
+                    GitHub
+                </div>
+
+                <div class="skill-description">
+                    Hosting & version control
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
-<!-- PROJECTS -->
+<!-- =========================
+     PROJECTS
+========================= -->
 
-<section class="section reveal" id="projects">
+<section id="projects">
 
-<div class="section-top">
+    <div class="container">
 
-<div class="section-number">
-03 / PROJECTS
-</div>
+        <div class="section-number reveal">
+            03 — PROJECTS
+        </div>
 
-<h2 class="section-heading">
-SELECTED WORK
-</h2>
+        <h2 class="section-title reveal">
+            Things I've<br>
+            built.
+        </h2>
 
-</div>
 
-<div class="project-list">
+        <div class="projects-grid">
 
-<div class="project">
 
-<div class="project-num">
-01
-</div>
+            <div class="project-card reveal">
 
-<div>
+                <div class="project-top">
 
-<h3>Bot Web App</h3>
+                    <span class="project-number">
+                        01
+                    </span>
 
-<p>
-A custom web application connected with Telegram,
-designed to receive messages and handle user requests.
-</p>
+                    <span class="project-type">
+                        WEBSITE
+                    </span>
 
-<div class="project-tags">
-<span class="tag">Telegram</span>
-<span class="tag">Web App</span>
-<span class="tag">Automation</span>
-</div>
+                </div>
 
-</div>
 
-<div class="project-arrow">
-↗
-</div>
+                <div class="project-content">
 
-</div>
+                    <h3>
+                        VINAY PRIME
+                    </h3>
 
+                    <p>
+                        A modern personal developer portfolio
+                        designed with a clean and premium interface.
+                    </p>
 
-<div class="project">
+                </div>
 
-<div class="project-num">
-02
-</div>
 
-<div>
+                <div class="project-tags">
 
-<h3>Creative Websites</h3>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
 
-<p>
-Modern responsive websites with clean layouts,
-smooth interactions and mobile-first design.
-</p>
+                </div>
 
-<div class="project-tags">
-<span class="tag">HTML</span>
-<span class="tag">CSS</span>
-<span class="tag">JavaScript</span>
-</div>
+            </div>
 
-</div>
 
-<div class="project-arrow">
-↗
-</div>
 
-</div>
+            <div class="project-card reveal">
 
+                <div class="project-top">
 
-<div class="project">
+                    <span class="project-number">
+                        02
+                    </span>
 
-<div class="project-num">
-03
-</div>
+                    <span class="project-type">
+                        TELEGRAM
+                    </span>
 
-<div>
+                </div>
 
-<h3>Custom Digital Projects</h3>
 
-<p>
-Experimental and custom-built digital experiences
-made around specific ideas and requirements.
-</p>
+                <div class="project-content">
 
-<div class="project-tags">
-<span class="tag">Creative</span>
-<span class="tag">Development</span>
-<span class="tag">Custom</span>
-</div>
+                    <h3>
+                        TELEGRAM BOTS
+                    </h3>
 
-</div>
+                    <p>
+                        Custom Telegram bots designed for
+                        automation and useful digital services.
+                    </p>
 
-<div class="project-arrow">
-↗
-</div>
+                </div>
 
-</div>
 
-</div>
+                <div class="project-tags">
 
-</section>
+                    <span>Python</span>
+                    <span>Telegram</span>
+                    <span>API</span>
 
+                </div>
 
-<!-- CTA -->
+            </div>
 
-<section class="section reveal">
 
-<div class="big-cta">
 
-<div class="cta-content">
+            <div class="project-card reveal">
 
-<div class="cta-small">
-LET'S BUILD SOMETHING
-</div>
+                <div class="project-top">
 
-<h2>
-HAVE AN IDEA?<br>
-LET'S BUILD IT.
-</h2>
+                    <span class="project-number">
+                        03
+                    </span>
 
-<p>
-If you need a website, bot, web app,
-or custom digital project, feel free to contact me.
-</p>
+                    <span class="project-type">
+                        WEB APP
+                    </span>
 
-<a href="#contact" class="cta-button">
-START A PROJECT →
-</a>
+                </div>
 
-</div>
 
-</div>
+                <div class="project-content">
 
-</section>
+                    <h3>
+                        FLASK APPS
+                    </h3>
 
+                    <p>
+                        Python-powered web applications with
+                        custom interfaces and backend functionality.
+                    </p>
 
-<!-- CONTACT -->
+                </div>
 
-<section class="section reveal" id="contact">
 
-<div class="section-top">
+                <div class="project-tags">
 
-<div class="section-number">
-04 / CONTACT
-</div>
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
 
-<h2 class="section-heading">
-LET'S TALK
-</h2>
+                </div>
 
-</div>
+            </div>
 
-<div class="line"></div>
 
-<div style="height:45px"></div>
 
+            <div class="project-card reveal">
 
-<div class="contact-grid">
+                <div class="project-top">
 
-<div class="contact-copy">
+                    <span class="project-number">
+                        04
+                    </span>
 
-<h3>
-Need something to be built?
-</h3>
+                    <span class="project-type">
+                        ANDROID
+                    </span>
 
-<p>
-Tell me what you have in mind.
-Whether it's a website, Telegram bot,
-web app or another digital project,
-send me the details.
-</p>
+                </div>
 
-<a
-href="https://t.me/VINAYXHERE"
-target="_blank"
-rel="noopener noreferrer"
-class="contact-link"
->
-Telegram @VINAYXHERE ↗
-</a>
 
-</div>
+                <div class="project-content">
 
+                    <h3>
+                        ANDROID APPS
+                    </h3>
 
-<form class="form" id="contactForm">
+                    <p>
+                        Android applications focused on simple
+                        interfaces and useful functionality.
+                    </p>
 
-<div class="field">
+                </div>
 
-<label>YOUR NAME</label>
 
-<input
-id="name"
-type="text"
-placeholder="Enter your name"
-required
->
+                <div class="project-tags">
 
-</div>
+                    <span>Java</span>
+                    <span>XML</span>
+                    <span>Android</span>
 
+                </div>
 
-<div class="field">
+            </div>
 
-<label>YOUR GMAIL</label>
 
-<input
-id="gmail"
-type="email"
-placeholder="Enter your Gmail"
-required
->
+        </div>
 
-</div>
-
-
-<div class="field">
-
-<label>MESSAGE</label>
-
-<textarea
-id="message"
-placeholder="Tell me about your project..."
-required
-></textarea>
-
-</div>
-
-
-<button
-class="send"
-type="submit"
->
-SEND MESSAGE →
-</button>
-
-<div
-class="form-status"
-id="formStatus"
-></div>
-
-</form>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- FOOTER -->
 
-<footer class="footer">
+<!-- =========================
+     CTA
+========================= -->
 
-<div class="line"></div>
+<section class="cta-section">
 
-<div style="height:35px"></div>
+    <div class="container">
 
-<div class="footer-row">
+        <div class="cta reveal">
 
-<div class="footer-name">
-VINAY PRIME®
-</div>
+            <div>
 
-<p>
-Developed by VINAY PRIME · 2026
-</p>
+                <div class="section-number">
+                    LET'S BUILD
+                </div>
 
-</div>
+                <h2>
+                    Have an idea?
+                </h2>
+
+                <p>
+                    Let's turn your idea into a working
+                    digital project.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#contact"
+                class="btn btn-dark">
+
+                Start a Conversation →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+
+            <div class="reveal">
+
+                <div class="section-number">
+                    04 — CONTACT
+                </div>
+
+                <h2 class="section-title">
+                    Let's talk.
+                </h2>
+
+                <p class="contact-text">
+
+                    Have a project, idea or question?
+                    Send me a message and I'll get back to you.
+
+                </p>
+
+
+                <a
+                    href="https://t.me/VINAYXHERE"
+                    target="_blank"
+                    rel="noopener"
+                    class="telegram-link">
+
+                    Telegram → @VINAYXHERE
+
+                </a>
+
+            </div>
+
+
+
+            <div class="reveal">
+
+                <form
+                    class="contact-form"
+                    id="contactForm">
+
+
+                    <div class="field">
+
+                        <label for="name">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="field">
+
+                        <label for="gmail">
+                            Gmail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="gmail"
+                            name="gmail"
+                            placeholder="yourname@gmail.com"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="field">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your message..."
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-dark send-btn">
+
+                        Send Message →
+
+                    </button>
+
+
+                    <div
+                        class="form-status"
+                        id="formStatus"
+                        aria-live="polite">
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © 2026 VINAY PRIME
+        </div>
+
+        <div>
+            DEVELOPED BY VINAY PRIME
+        </div>
+
+    </div>
 
 </footer>
 
-</div>
 
 
-<!-- FLOATING TELEGRAM -->
+<!-- =========================
+     FLOATING TELEGRAM
+========================= -->
 
 <a
-href="https://t.me/VINAYXHERE"
-target="_blank"
-rel="noopener noreferrer"
-class="floating-tg"
-aria-label="Telegram"
->
-✈
+    href="https://t.me/VINAYXHERE"
+    target="_blank"
+    rel="noopener"
+    class="floating-telegram"
+    aria-label="Telegram">
+
+    TG
+
 </a>
 
 
-<!-- MOBILE NAV -->
 
-<div class="mobile-nav">
+<style>
 
-<a href="#home">
-<span>⌂</span>
-Home
-</a>
+/* =========================
+   PROJECTS
+========================= */
 
-<a href="#about">
-<span>◎</span>
-About
-</a>
+.projects-grid{
+    display:grid;
 
-<a href="#skills">
-<span>✦</span>
-Skills
-</a>
+    grid-template-columns:repeat(2,1fr);
 
-<a href="#projects">
-<span>◈</span>
-Work
-</a>
+    gap:16px;
+}
 
-<a href="#contact">
-<span>✉</span>
-Contact
-</a>
+.project-card{
+    min-height:350px;
 
-</div>
+    padding:30px;
 
+    border:1px solid #eeeeee;
+
+    border-radius:24px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    background:#ffffff;
+
+    transition:.3s;
+}
+
+.project-card:hover{
+    border-color:#111111;
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.07);
+}
+
+.project-top{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.project-number{
+    color:#aaaaaa;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+.project-type{
+    color:#999999;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+}
+
+.project-content h3{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:30px;
+
+    letter-spacing:-1px;
+
+    margin-bottom:12px;
+}
+
+.project-content p{
+    color:#777777;
+
+    max-width:470px;
+}
+
+.project-tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+}
+
+.project-tags span{
+    padding:7px 11px;
+
+    border:1px solid #e5e5e5;
+
+    border-radius:999px;
+
+    color:#777777;
+
+    font-size:11px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:55px;
+
+    border:1px solid #eeeeee;
+
+    border-radius:28px;
+
+    background:#fafafa;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.cta h2{
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:clamp(42px,6vw,70px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#777777;
+}
+
+.cta .section-number{
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    gap:100px;
+
+    align-items:start;
+}
+
+.contact-text{
+    max-width:450px;
+
+    color:#666666;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+}
+
+.telegram-link{
+    display:inline-block;
+
+    font-weight:700;
+
+    border-bottom:1px solid #111111;
+
+    padding-bottom:4px;
+}
+
+.contact-form{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+.field{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.field label{
+    color:#333333;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.field input,
+.field textarea{
+    width:100%;
+
+    padding:15px 16px;
+
+    border:1px solid #dddddd;
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    color:#111111;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.25s;
+
+    resize:vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#aaaaaa;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:#111111;
+
+    box-shadow:
+    0 0 0 3px rgba(0,0,0,.04);
+}
+
+.send-btn{
+    border:0;
+
+    cursor:pointer;
+
+    align-self:flex-start;
+}
+
+.send-btn:disabled{
+    opacity:.6;
+
+    cursor:not-allowed;
+}
+
+.form-status{
+    min-height:22px;
+
+    color:#666666;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #eeeeee;
+
+    padding:28px 0;
+
+    color:#888888;
+
+    font-size:12px;
+}
+
+.footer-inner{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+
+/* =========================
+   FLOATING TELEGRAM
+========================= */
+
+.floating-telegram{
+    position:fixed;
+
+    right:22px;
+    bottom:22px;
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#111111;
+
+    color:#ffffff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.18);
+
+    z-index:900;
+
+    transition:.3s;
+}
+
+.floating-telegram:hover{
+    transform:
+    translateY(-4px)
+    scale(1.04);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+
+        gap:55px;
+    }
+
+    .cta{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:38px;
+    }
+
+}
+
+
+@media(max-width:520px){
+
+    .project-card{
+        min-height:320px;
+
+        padding:24px;
+    }
+
+    .project-content h3{
+        font-size:26px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .floating-telegram{
+        right:16px;
+        bottom:16px;
+    }
+
+}
+
+</style>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
-/* ==========================================
-   GOOGLE APPS SCRIPT WEB APP URL
-   ========================================== */
+/* =========================
+   MOBILE MENU
+========================= */
 
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbz7GQdcF-YQhB1C-OFa5rlsDdf2B0DosgoBnDJUE1l0PQP1d6sb6iy9nUiq7HhsAxg2sQ/exec";
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
 
 
-/* ==========================================
-   SCROLL REVEAL
-   ========================================== */
+if(menuBtn && navLinks){
+
+    menuBtn.addEventListener(
+        "click",
+        function(){
+
+            navLinks.classList.toggle("open");
+
+            menuBtn.textContent =
+                navLinks.classList.contains("open")
+                ? "✕"
+                : "☰";
+
+        }
+    );
+
+
+    navLinks
+    .querySelectorAll("a")
+    .forEach(function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                navLinks.classList.remove("open");
+
+                menuBtn.textContent = "☰";
+
+            }
+        );
+
+    });
+
+}
+
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
 
 const revealItems =
 document.querySelectorAll(".reveal");
 
-const revealObserver =
-new IntersectionObserver(
 
-(entries) => {
+if("IntersectionObserver" in window){
 
-entries.forEach((entry) => {
+    const observer =
+    new IntersectionObserver(
+        function(entries){
 
-if(entry.isIntersecting){
+            entries.forEach(
+                function(entry){
 
-entry.target.classList.add("visible");
+                    if(entry.isIntersecting){
 
-revealObserver.unobserve(entry.target);
+                        entry.target
+                        .classList
+                        .add("show");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+    revealItems.forEach(
+        function(item){
+
+            observer.observe(item);
+
+        }
+    );
+
+}else{
+
+    revealItems.forEach(
+        function(item){
+
+            item.classList.add("show");
+
+        }
+    );
 
 }
 
-});
-
-},
-
-{
-threshold:0.08
-}
-
-);
-
-revealItems.forEach((item) => {
-
-revealObserver.observe(item);
-
-});
 
 
-/* ==========================================
-   CONTACT FORM
-   ========================================== */
+/* =========================
+   CONTACT API
+========================= */
+
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbw_52ogAPd5GhIpmWG3fs-YzTS00HAUbfz43PJqBanFL0ckrvzfz1QdnVyo2_madJet/exec";
+
 
 const contactForm =
 document.getElementById("contactForm");
@@ -1592,187 +2223,138 @@ const formStatus =
 document.getElementById("formStatus");
 
 
-contactForm.addEventListener(
-"submit",
-async (event) => {
+if(contactForm){
 
-event.preventDefault();
+    contactForm.addEventListener(
+        "submit",
+        function(event){
 
+            event.preventDefault();
 
-const name =
-document.getElementById("name").value.trim();
 
+            const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
 
-const gmail =
-document.getElementById("gmail").value.trim();
 
+            const gmail =
+            document
+            .getElementById("gmail")
+            .value
+            .trim();
 
-const message =
-document.getElementById("message").value.trim();
 
+            const message =
+            document
+            .getElementById("message")
+            .value
+            .trim();
 
-if(!name || !gmail || !message){
 
-formStatus.textContent =
-"Please fill all fields.";
+            if(
+                !name ||
+                !gmail ||
+                !message
+            ){
 
-return;
+                formStatus.textContent =
+                "Please fill all fields.";
 
-}
+                return;
 
+            }
 
-if(SCRIPT_URL.includes("PASTE_YOUR")){
 
-formStatus.textContent =
-"Contact system is not connected yet.";
+            const sendButton =
+            contactForm
+            .querySelector(".send-btn");
 
-return;
-<script>
 
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbyi-GOOOssUbINiKbH49NDBWCX3K26JNOy708UXaG7R0CtPQFmrZHUa2PI6KjqRhYXoGA/exec";
+            sendButton.disabled = true;
 
+            sendButton.textContent =
+            "Sending...";
 
-const revealItems =
-document.querySelectorAll(".reveal");
 
-if (window.IntersectionObserver) {
+            formStatus.textContent =
+            "Sending your message...";
 
-const revealObserver =
-new IntersectionObserver((entries) => {
 
-entries.forEach((entry) => {
+            const data = {
 
-if (entry.isIntersecting) {
+                name:name,
 
-entry.target.classList.add("visible");
+                gmail:gmail,
 
-revealObserver.unobserve(entry.target);
+                message:message,
 
-}
+                time:
+                new Date()
+                .toLocaleString("en-IN")
 
-});
+            };
 
-}, {
-threshold: 0.08
-});
 
-revealItems.forEach((item) => {
-revealObserver.observe(item);
-});
+            fetch(
+                SCRIPT_URL,
+                {
+                    method:"POST",
 
-} else {
+                    mode:"no-cors",
 
-revealItems.forEach((item) => {
-item.classList.add("visible");
-});
+                    headers:{
+                        "Content-Type":
+                        "text/plain;charset=utf-8"
+                    },
 
-}
+                    body:
+                    JSON.stringify(data)
 
+                }
+            )
 
-/* CONTACT FORM */
+            .then(
+                function(){
 
-const contactForm =
-document.getElementById("contactForm");
+                    formStatus.textContent =
+                    "Message sent successfully ✓";
 
-const formStatus =
-document.getElementById("formStatus");
+                    contactForm.reset();
 
+                }
+            )
 
-if (contactForm) {
+            .catch(
+                function(error){
 
-contactForm.addEventListener("submit", function(event) {
+                    console.error(error);
 
-event.preventDefault();
+                    formStatus.textContent =
+                    "Something went wrong. Please try again.";
 
+                }
+            )
 
-const name =
-document.getElementById("name").value.trim();
+            .finally(
+                function(){
 
-const gmail =
-document.getElementById("gmail").value.trim();
+                    sendButton.disabled = false;
 
-const message =
-document.getElementById("message").value.trim();
+                    sendButton.textContent =
+                    "Send Message →";
 
+                }
+            );
 
-if (!name || !gmail || !message) {
-
-formStatus.textContent =
-"Please fill all fields.";
-
-return;
-
-}
-
-
-const button =
-contactForm.querySelector(".send");
-
-button.disabled = true;
-
-button.textContent =
-"SENDING...";
-
-formStatus.textContent =
-"Sending message...";
-
-
-const data = {
-
-name: name,
-
-gmail: gmail,
-
-message: message,
-
-time: new Date().toLocaleString("en-IN")
-
-};
-
-
-fetch(SCRIPT_URL, {
-
-method: "POST",
-
-mode: "no-cors",
-
-headers: {
-"Content-Type": "text/plain;charset=utf-8"
-},
-
-body: JSON.stringify(data)
-
-})
-.then(function() {
-
-formStatus.textContent =
-"Message sent successfully ✓";
-
-contactForm.reset();
-
-})
-.catch(function(error) {
-
-console.error(error);
-
-formStatus.textContent =
-"Message could not be sent.";
-
-})
-.finally(function() {
-
-button.disabled = false;
-
-button.textContent =
-"SEND MESSAGE →";
-
-});
-
-});
+        }
+    );
 
 }
 
 </script>
+
+
 </body>
-  </html>
+                  </html>
